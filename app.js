@@ -6,9 +6,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
-app.get('/',(req,res)=>{
-    res.send("Success");
-})
+app.use('/api',require('./routers/api'));
 
 app.listen(port,()=>{
     console.log("Application Running ")
