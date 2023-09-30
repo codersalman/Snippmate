@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>App</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,400,700&display=swap" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 400px;
+      height: 100%;
+      border-radius: 10px;
+      /* border: 1px solid var(--scattr-border-color, #d1d5da); */
+      background: #fff;
+    }
+
+    .header {
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      margin-right: auto;
+        margin-left: 20px;
+      /* Push the button to the left */
+    }
+
+    .topB {
+      border-radius: 24.324px;
+      border: 0.811px solid var(--scattr-border-color, #d1d5da);
+      display: flex;
+      padding: 7.297px 8.108px 7.297px 10.541px;
+      justify-content: center;
+      align-items: center;
+      gap: 4.865px;
+      background-color: #fff;
+      margin: 20px;
+    }
+
+    #summarizeBtn {
+      border-radius: 26.499px;
+      border: 1px solid var(--scattr-border-color, #d1d5da);
+      background: var(--scattr-primary-color, #266EFF);
+      display: inline-flex;
+      padding: 7.95px 21.199px;
+      justify-content: center;
+      font-family: "Lato", sans-serif;
+
+      align-items: center;
+      gap: 8.833px;
+      color: #fff;
+      font-size: 15px;
+    }
+
+    #summaryContainer {
+      margin: 20px;
+      padding: 10px;
+      /* height: 200px; */
+      border-radius: 10px;
+      border: 0.899px solid var(--scattr-border-color, #d1d5da);
+      background: #fff;
+      text-align: left;
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      color: #212121;
+      font-family: Lato;
+    }
+
+    .title {
+      padding: 10px;
+      color: var(--scattr-secondery-text-color, #212121);
+      text-align: center;
+      font-family: "Lato", sans-serif;
+      font-size: 16.13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .spinner {
+      border: 3px solid #d1d5da;
+      border-top: 3px solid #4653f6;
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      animation: spin 1s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    #importBtn {
+      border-radius: 26.499px;
+      border: 1px solid var(--scattr-border-color, #d1d5da);
+      background: var(--scattr-primary-color, #ffffff);
+      display: inline-flex;
+      padding: 7.95px 21.199px;
+      justify-content: center;
+      font-family: "Lato", sans-serif;
+
+      align-items: center;
+      gap: 8.833px;
+      color: #212121;
+      font-size: 15px;
+
+    }
+    /* Styling for the tooltip */
+   
+  </style>
+  <script src="popup.js"></script>
+</head>
+
+<body>
+<div class="header">
+  <div class="logo">
+    <!-- Add your logo image here -->
+    <img src="assets/logo.svg" alt="Logo" />
+  </div>
+  <div style="text-align: center">
+    <button class="topB">😎</button>
+  </div>
+</div>
+<div style="text-align: center">
+  <h1 class="title" id="title"></h1>
+  <button id="summarizeBtn">
+    <img src="assets/ai_sum.svg" /> Inspect CodeBlocks
+  </button>
+  <div id="summaryContainer">
+    <div class="spinner" id="loader"></div>
+  </div>
+</div>
+</body>
+
+</html>

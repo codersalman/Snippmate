@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Code Inspector",
+  "version": "1.0",
+  "description": "Inspect code on Medium, Dev, and Scattr",
+  "permissions": [
+    "activeTab",
+    "unlimitedStorage",
+    "tabs",
+    "storage",
+    "identity",
+    "webRequest",
+    "scripting"
+  ],
+
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js","popup.js"],
+      "css": ["assets/content.css"]
+    }
+  ],
+  "icons": {
+    "192": "logo192.png",
+    "512": "logo512.png"
+  },
+
+  "host_permissions": [
+    "https://medium.com/*",
+    "https://www.scattr.io/*",
+    "https://www.gstatic.com/"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["https://cdn.firebase.com", "https://apis.google.com", "https://www.gstatic.com"],
+      "matches": ["https://medium.com/*", "https://www.scattr.io/*"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"}
+
+}
