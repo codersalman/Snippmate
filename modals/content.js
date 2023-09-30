@@ -17,5 +17,5 @@ const dataSchema=new mongoose.Schema({
         ref: 'user'
     }
 });
-const data=mongoose.model('dataSchema',dataSchema);
-module.exports=data;
+const content=mongoose.model('contentschema',dataSchema);
+module.exports=content;

@@ -1,5 +1,5 @@
 const  mongoose=require('mongoose');
-const uri="mongodb+srv://faizk5515:kb2KzPUECh6WeyCR@opinkacks.fam8ait.mongodb.net/?retryWrites=true&w=majority";
+const uri="mongodb://localhost:27017/opinhacks";
 // const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const connecttodb=async ()=>{

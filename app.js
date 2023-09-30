@@ -9,13 +9,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 connecttodb();
 
-app.use('/generativeai',require('./routers/generativeai'));
-app.use('/auth',require('./routers/auth'));
-app.use('/',require('./routers/fetchdata'));
+// app.use('/generativeai',require('./routers/generativeai'));
+// app.use('/auth',require('./routers/auth'));
+app.use('/',require('./routers/userLS'));
+app.use('/content',require('./routers/content'));
 
 app.get('/',(req,res)=>{
     res.send("hello");
-})
+});
+
 app.listen(port,()=>{
     console.log("Application Running ")
 });
