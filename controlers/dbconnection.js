@@ -1,5 +1,5 @@
 const  mongoose=require('mongoose');
-const uri="mongodb://localhost:27017/opinhacks";
+const uri= process.env.MONGO_URI;
 // const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const connecttodb=async ()=>{
