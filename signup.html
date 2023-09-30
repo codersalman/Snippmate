@@ -1,37 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
-    <title>Login Page</title>
+<html data-bs-theme="light" lang="en">
 
-  </head>
-  <body>
-    <div class="login">
-      <div class="left">
-        <div class="logo">
-          <img src="images/logo.svg" alt="Logo" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>opin</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/DashBoard-light-boostrap-animate.min.css">
+    <link rel="stylesheet" href="assets/css/DashBoard-light-boostrap-demo.css">
+    <link rel="stylesheet" href="assets/css/DashBoard-light-boostrap-pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="assets/css/DashBoard-light-boostrap-light-bootstrap-dashboard.css">
+    <link rel="stylesheet" href="assets/css/DashBoard-light-boostrap.css">
+    <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+</head>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyBb9Y2HcWgE9wxwxZzwWlDmgsTmwH7C0zw",
+        authDomain: "snippmate.firebaseapp.com",
+        projectId: "snippmate",
+        storageBucket: "snippmate.appspot.com",
+        messagingSenderId: "353273401632",
+        appId: "1:353273401632:web:88cc4520318645f46bc745"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+</script>
+<body style="background: #D0DEFB;">
+    <div class="container">
+        <div class="row" style="border-radius: 50px;background: var(--white-100, #FFF);margin: 48px;">
+            <div class="col-md-6" style="margin: -2px;">
+                <div style="margin: 37px;"><img src="assets/img/Group%20157.svg">
+                    <div>
+                        <h1><strong>Get started</strong></h1>
+                        <p style="color: rgb(125,125,125);margin-top: -7px;margin-left: 7px;">Already have an account? &nbsp;<span style="color: rgb(0,85,255);"><a href="login.html"><span style="color: rgb(38, 110, 255);">Login</span></a></span></p>
+                    </div>
+                </div>
+                <div style="margin: 77px;margin-top: 47px;">
+                    <form>
+                        <div class="col" style="margin-bottom: 13px;"><label class="form-label" style="margin-left: 16px;margin-bottom: 8px;"><span style="background-color: rgb(255, 255, 255);">Username</span></label><input class="form-control" id="username" type="text" style="border-radius: 50px;background: var(--white-100, #FFF);margin-top: -21px;height: 51px;" placeholder="@yourname"></div>
+                        <div class="col" style="margin-bottom: 13px;"><label class="form-label" style="margin-left: 16px;margin-bottom: 8px;"><span style="background-color: rgb(255, 255, 255);">Email</span></label><input class="form-control" id="email" type="email" style="border-radius: 50px;background: var(--white-100, #FFF);margin-top: -21px;height: 51px;"></div>
+                        <div class="col" style="margin-bottom: 13px;"><label class="form-label" style="margin-left: 16px;margin-bottom: 8px;"><span style="background-color: rgb(255, 255, 255);">Password</span></label><input class="form-control" id="password" type="password" style="border-radius: 50px;background: var(--white-100, #FFF);margin-top: -21px;height: 51px;"></div>
+                        <div class="col" style="margin: 18px;">
+                        </div>
+                    </form>
+                    <div style="text-align: center;margin-top: 46px;"><button class="btn btn-primary" onclick="signUp()" style="color: rgba(255,255,255,0.96);border-radius: var(--16, 16px);background: #266EFF;width: 354.0234px;">Signup</button></div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card" style="background: rgb(38,110,255);margin: 28px;">
+                    <div class="card-body">
+                        <div style="text-align: center;"><img src="assets/img/File%20searching-rafiki%20(2)%201.svg">
+                            <h1 style="text-align: left;color: rgb(255,255,255);">Analyse<br>Optimize<br>Implement</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form">
-          <h2 >Get Started</h2>
-          <p>Already have an account?  <a href="login.html">Log in</a></p>
-          <!-- <label for="text">Email</label> -->
-          <input type="text" placeholder="Name">
-          <input type="text" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <input type="password" placeholder="Confirm Password" />
-          <div>
-            <button>Login</button>
-          </div>
-          <div class="go-back">
-            <a href="index.html">Go Back</a>
-          </div>
-        </div>
-      </div>
-      <div class="right" >
-        <img src="images/login-img.svg" alt="">
-      </div>
     </div>
-  </body>
+    <script>
+
+
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                // User is signed in.
+                //  alert('User Logged in with ' + user.email)
+                document.location.href = "main.html";
+                // document.getElementById("email").value = user.email;
+                // document.getElementById("label").innerHTML = 'User Logged in Email is';
+                // document.getElementById("id_pass").style.display = "none";
+                //
+                // document.getElementById("sign_out").style.display = "block";
+                // document.getElementById("sign_in").style.display = "none";
+                // document.getElementById("sign_up").style.display = "none";
+            } else {
+
+                // // User is signed out.
+                // document.getElementById("email").innerHTML = "";
+                // document.getElementById("sign_out").style.display = "none";
+                // document.getElementById("sign_in").style.display = "block";
+                // document.getElementById("sign_up").style.display = "block";
+            }
+        });
+
+
+    </script>
+    <script src="assets/js/auth.js"></script>
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/DashBoard-light-boostrap-chartist.min.js"></script>
+    <script src="assets/js/DashBoard-light-boostrap-bootstrap-notify.js"></script>
+    <script src="assets/js/DashBoard-light-boostrap-bootstrap-select.js"></script>
+    <script src="assets/js/DashBoard-light-boostrap-light-bootstrap-dashboard.js"></script>
+    <script src="assets/js/DashBoard-light-boostrap-demo.js"></script>
+</body>
+
 </html>
