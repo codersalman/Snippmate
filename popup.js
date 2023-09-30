@@ -12,6 +12,6 @@ chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
 
     chrome.scripting.executeScript({
         target: {tabId: activeTab.id},
-        files: ["content_script.js"],
+        files: ["content_script.js", "https://cdn.jsdelivr.net/npm/marked/marked.min.js"],
     }).then(() => console.log("script injected"));
 });
