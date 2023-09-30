@@ -127,7 +127,7 @@
 
 /* Show the tooltip text when hovering over the tooltip container */
 .tooltip:hover .tooltiptext {
-    visibility: visible;
+    visibility: hidden;
     opacity: 1;
 }
 

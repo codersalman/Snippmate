@@ -52,7 +52,6 @@ async function showTooltip(event) {
                 .then((data) => {
                     event.target.setAttribute("data-inspected", "true");
                     const summary = data.data || 'No summary available.';
-                    tooltip.querySelector(".tooltiptext").textContent = summary;
                     tooltip.querySelector(".tooltipheader").textContent = summary;
 
                 })
@@ -68,7 +67,7 @@ async function showTooltip(event) {
 
 // Function to hide the tooltip on mouseleave
 function hideTooltip(event) {
-    const tooltip = event.target.querySelector(".tooltip");
+    const tooltip = event.target.querySelector(".tooltiptext");
     if (tooltip) {
         tooltip.remove();
     }
@@ -78,6 +77,6 @@ function hideTooltip(event) {
 const codeBlocks = document.querySelectorAll("pre, code");
 codeBlocks.forEach((block) => {
     block.addEventListener("mouseenter", showTooltip);
-    block.addEventListener("mousehover", showTooltip);
+    block.addEventListener("mousehover", hideTooltip);
     block.addEventListener("mouseleave", hideTooltip);
 });
