@@ -30,9 +30,9 @@ router.post("/login/:username",async (req,res)=>{
 //signup route
 
 router.post("/signup",async (req,res)=>{
-    //authentication ugin 
+    //authentication  
     
-        const {email,username,password}=req.body;
+        const {email,username,password,confirmPassword}=req.body;
         console.log(req.body)
         try {
             let userdetails=await user.findOne({email:email});
