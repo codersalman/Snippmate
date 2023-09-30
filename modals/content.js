@@ -12,9 +12,9 @@ const dataSchema=new mongoose.Schema({
         type:String,
         require:true
     },
-    user:{
+    userid:{
         type: mongoose.Schema.Types.ObjectId, 
-        ref: 'user'
+        ref: 'users'
     }
 });
 const content=mongoose.model('contentschema',dataSchema);
