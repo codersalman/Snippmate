@@ -67,7 +67,7 @@ async function showTooltip(event) {
 
 // Function to hide the tooltip on mouseleave
 function hideTooltip(event) {
-    const tooltip = event.target.querySelector(".tooltiptext");
+    const tooltip = event.target.querySelector(".tooltip");
     if (tooltip) {
         tooltip.remove();
     }
