@@ -9,14 +9,29 @@ var usernameInput = document.getElementById("username");
 function signUp() {
     var email = emailInput.value;
     var password = passwordInput.value;
-    var username = usernameInput.value;
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
-        .catch(function(error) {
-            // Handle Errors here.
+        .catch(async function (error) {
+
+            var username = usernameInput.value;
+            await   fetch(`https://snippt.onrender.com/signup`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: username,
+                    email: email,
+                    password: password
+                })
+            }).then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    alert('User Signed Up Successfully');
+                    })
             var errorCode = error.code;
             var errorMessage = error.message;
-            console.log('Error: '+ errorMessage);
+            console.log('Error: ' + errorMessage);
             alert(errorMessage);
         });
 }
@@ -27,12 +42,10 @@ function signIn() {
     var password = passwordInput.value;
     firebase.auth().signInWithEmailAndPassword(email, password)
         .catch(function(error) {
-            // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log('Error: '+ errorMessage)
-            alert(errorMessage);
-
+            alert("Wrong Password or Email");
 
         });
 }
