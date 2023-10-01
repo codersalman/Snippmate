@@ -166,3 +166,12 @@
     padding: 15px;
     margin: 10px;
 }
+.pin{
+    width: fit-content;
+    text-align: center;
+    border: 0.636px solid var(--scattr-border-color, #D1D5DA);
+    background: var(--white-100, #FFF);
+    margin: 11px;
+    padding: 12px;
+    border-radius: 15px;
+}
