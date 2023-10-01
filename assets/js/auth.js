@@ -10,11 +10,10 @@ function signUp() {
     var email = emailInput.value;
     var password = passwordInput.value;
 
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-        .catch(async function (error) {
-
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(
+        async function (user) {
             var username = usernameInput.value;
-            await   fetch(`https://snippt.onrender.com/signup`, {
+            await fetch(`https://snippt.onrender.com/signup`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -28,11 +27,13 @@ function signUp() {
                 .then(data => {
                     console.log('Success:', data);
                     alert('User Signed Up Successfully');
-                    })
+                })
+        }
+    ).catch(async function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log('Error: ' + errorMessage);
-            alert(errorMessage);
+            // alert(errorMessage);
         });
 }
 
