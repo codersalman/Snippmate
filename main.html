@@ -166,7 +166,6 @@
 
       }
 
-
       function listNews(data){
 
         data.then(function (result) {
@@ -176,13 +175,7 @@
           news.forEach(function (item) {
             var newsItem = document.createElement('div');
             newsItem.className = 'col';
-            newsItem.innerHTML = ' <div class="card" style="margin: 11px;">\n' +
-                    '                        <div class="card-body" style="padding-top: 0px;">\n' +
-                    '                          <h1 style="font-size: 38px;"><strong>${item.title}</strong></h1>\n' +
-                    '                          <p>${item.discription}</p>\n' +
-                    '                          <a class="nav-link active inside" role="tab" data-bs-toggle="pill" href="#tab-1">${item.type}</a>\n' +
-                    '                        </div>\n' +
-                    '                      </div>';
+            newsItem.innerHTML = ` <div class="card" style="margin: 11px;"> <div class="card-body" style="padding-top: 0px;"> <h1 style="font-size: 38px;"><strong>${item.title}</strong></h1> <p>${item.discription}</p> <a class="nav-link active inside" role="tab" data-bs-toggle="pill" href="#tab-1">${item.type}</a> </div></div> `
             newsList.appendChild(newsItem);
           })
         })
