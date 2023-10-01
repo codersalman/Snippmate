@@ -13,7 +13,7 @@ connecttodb();
 // app.use('/generativeai',require('./routers/generativeai'));
 // app.use('/auth',require('./routers/auth'));
 const corsOptions = {
-    origin: ["https://snippmate.co", "https://www.snippmate.co"],
+    origin: ["*"],
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
