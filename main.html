@@ -173,8 +173,8 @@
           var news = result;
           var newsList = document.getElementById('cards_l');
           news.forEach(function (item) {
-            newsItem.innerHTML = ` <div class="card" style="margin: 11px;"> <div class="card-body" style="padding-top: 0px;"> <h1 style="font-size: 38px;"><strong>${item.title}</strong></h1> <p>${item.discription}</p> <a class="nav-link active inside" role="tab" data-bs-toggle="pill" href="#tab-1">${item.type}</a> </div></div> `
-            // newsList.appendChild(newsItem);
+            newsList.innerHTML = ` <div class="card" style="margin: 11px;"> <div class="card-body" style="padding-top: 0px;"> <h1 style="font-size: 38px;"><strong>${item.title}</strong></h1> <p>${item.discription}</p> <a class="nav-link active inside" role="tab" data-bs-toggle="pill" href="#tab-1">${item.type}</a> </div></div> `
+            newsList.appendChild(newsItem);
           })
         })
 
