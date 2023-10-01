@@ -8,6 +8,8 @@ const cors = require("cors");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
+
+app.use(cors());
 connecttodb();
 
 // app.use('/generativeai',require('./routers/generativeai'));
