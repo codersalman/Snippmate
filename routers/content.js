@@ -8,7 +8,7 @@ const user=require('../modals/user')
  //Save an code Snippets
 
 router.post("/add", async (req,res)=>{
-        const {title,discription,type,username}=req.body;
+        const {title,discription,type,code,url}=req.body;
         console.log(req.body);
         try {
             let userdetail=await user.findOne({username:username});
