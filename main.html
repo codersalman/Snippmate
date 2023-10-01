@@ -1,200 +1,206 @@
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en" xmlns="http://www.w3.org/1999/html">
-  <head>
-    <meta charset="utf-8" />
+<head>
+    <title>SnippMate</title>
+    <meta charset="utf-8"/>
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+            content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+            name="viewport"
     />
     <title>opin</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     <link
-      rel="stylesheet"
-      href="assets/css/DashBoard-light-boostrap-animate.min.css"
+            href="assets/css/DashBoard-light-boostrap-animate.min.css"
+            rel="stylesheet"
     />
     <link
-      rel="stylesheet"
-      href="assets/css/DashBoard-light-boostrap-demo.css"
+            href="assets/css/DashBoard-light-boostrap-demo.css"
+            rel="stylesheet"
     />
     <link
-      rel="stylesheet"
-      href="assets/css/DashBoard-light-boostrap-pe-icon-7-stroke.css"
+            href="assets/css/DashBoard-light-boostrap-pe-icon-7-stroke.css"
+            rel="stylesheet"
     />
     <link
-      rel="stylesheet"
-      href="assets/css/DashBoard-light-boostrap-light-bootstrap-dashboard.css"
+            href="assets/css/DashBoard-light-boostrap-light-bootstrap-dashboard.css"
+            rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/DashBoard-light-boostrap.css" />
-    <link rel="stylesheet" href="./assets/css/Navbar-Right-Links-icons.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link href="./assets/css/DashBoard-light-boostrap.css" rel="stylesheet"/>
+    <link href="./assets/css/Navbar-Right-Links-icons.css" rel="stylesheet"/>
+    <link href="./assets/css/style.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
 
-  </head>
-  <script>
+</head>
+<script>
     const firebaseConfig = {
-      apiKey: "AIzaSyBb9Y2HcWgE9wxwxZzwWlDmgsTmwH7C0zw",
-      authDomain: "snippmate.firebaseapp.com",
-      projectId: "snippmate",
-      storageBucket: "snippmate.appspot.com",
-      messagingSenderId: "353273401632",
-      appId: "1:353273401632:web:88cc4520318645f46bc745"
+        apiKey: "AIzaSyBb9Y2HcWgE9wxwxZzwWlDmgsTmwH7C0zw",
+        authDomain: "snippmate.firebaseapp.com",
+        projectId: "snippmate",
+        storageBucket: "snippmate.appspot.com",
+        messagingSenderId: "353273401632",
+        appId: "1:353273401632:web:88cc4520318645f46bc745"
     };
     firebase.initializeApp(firebaseConfig);
-  </script>
-  <script src="assets/js/auth.js"></script>
+</script>
+<script src="assets/js/auth.js"></script>
 
-  <body>
-    <div class="wrapper" style="background: #ffffff">
-      <div
-        class="sidebar"
-        data-color="purple"
-        data-image=""
-        style="border-right: 1px solid rgba(105, 105, 105, 0.24)"
-      >
+<body>
+<div class="wrapper" style="background: #ffffff">
+    <div
+            class="sidebar"
+            data-color="purple"
+            data-image=""
+            style="border-right: 1px solid rgba(105, 105, 105, 0.24)"
+    >
         <div></div>
-        <img src="assets/logo.svg" alt="" class="logo" />
+        <img alt="" class="logo" src="assets/logo.svg"/>
 
-        <ul style="color: rgb(14, 12, 12)" class="fieldbox">
-          <div class="fields">
-            <img src="assets/img/snippets.svg" alt="" />
-           <b> <li id="snippets">Snippets</li></b>
-          </div>
-          <div class="fields">
-            <img src="/assets/img/assets.svg" alt="" />
-            <li>Assets</li>
-          </div>
-        </ul>
-      </div>
-      <div class="main-panel">
-        <nav
-          class="navbar navbar-expand-md navbar-light"
-          style="border-bottom: 1px solid rgba(105, 105, 105, 0.24)"
-        >
-          <div class="container-fluid">
-            <div></div>
-            <div class="collapse navbar-collapse" id="navcol-1">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link">Hello 👋 <span id="user_name"></span></a></li>
-                <li class="nav-item"><a class="nav-link" onclick="signOut()">Logout</a></li>
-              </ul>
+        <ul class="fieldbox" style="color: rgb(14, 12, 12)">
+            <div class="fields">
+                <img alt="" src="assets/img/snippets.svg"/>
+                <b>
+                    <li id="snippets">Snippets</li>
+                </b>
             </div>
-          </div>
+            <div class="fields">
+                <img alt="" src="/assets/img/assets.svg"/>
+                <li>Assets</li>
+            </div>
+        </ul>
+    </div>
+    <div class="main-panel">
+        <nav
+                class="navbar navbar-expand-md navbar-light"
+                style="border-bottom: 1px solid rgba(105, 105, 105, 0.24)"
+        >
+            <div class="container-fluid">
+                <div></div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link">Hello 👋 <span id="user_name"></span></a></li>
+                        <li class="nav-item"><a class="nav-link" onclick="signOut()">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
         <div class="content">
-          <div class="container-fluid">
-            <div>
-              <div>
-                <ul class="nav nav-pills" role="tablist">
-                  <li class="nav-item" role="presentation" id="code-snippet">
-                    <a
-                      class="nav-link active"
-                      role="tab"
-                      data-bs-toggle="pill"
-                      href="#tab-1"
-                      >Code Snippet</a
-                    >
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <a
-                      class="nav-link"
-                      role="tab"
-                      data-bs-toggle="pill"
-                      href="#tab-2"
-                      >APIs</a
-                    >
-                  </li>
-                </ul>
-                <div class="tab-content" style="margin: 24px">
-                  <div class="tab-pane active" role="tabpanel" id="tab-1">
-                    <div class="col d-xxl-flex justify-content-xxl-start" id="cards_l" style="margin: 10px;">
+            <div class="container-fluid">
+                <div>
+                    <div>
+                        <ul class="nav nav-pills" role="tablist">
+                            <li class="nav-item" id="code-snippet" role="presentation">
+                                <a
+                                        class="nav-link active"
+                                        data-bs-toggle="pill"
+                                        href="#tab-1"
+                                        role="tab"
+                                >Code Snippet</a
+                                >
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a
+                                        class="nav-link"
+                                        data-bs-toggle="pill"
+                                        href="#tab-2"
+                                        role="tab"
+                                >APIs</a
+                                >
+                            </li>
+                        </ul>
+                        <div class="tab-content" style="margin: 24px">
+                            <div class="tab-pane active" id="tab-1" role="tabpanel">
+                                <div class="col d-xxl-flex justify-content-xxl-start" id="cards_l"
+                                     style="margin: 10px;">
 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab-2" role="tabpanel">
+                        </div>
+                        <div class="tab-pane" id="tab-3" role="tabpanel">
+                        </div>
                     </div>
-                    </div>
-                  </div>
-                  <div class="tab-pane" role="tabpanel" id="tab-2">
-                  </div>
-                  <div class="tab-pane" role="tabpanel" id="tab-3">
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-        <footer class="footer">
-          <div class="container-fluid">
+    </div>
+    <footer class="footer">
+        <div class="container-fluid">
 
             <p class="copyright pull-right">
-              © Team Byte Brigade
+                © Team Byte Brigade
             </p>
-          </div>
-        </footer>
-      </div>
-    </div>
-    <script>
-      firebase.auth().onAuthStateChanged(function(user) {
+        </div>
+    </footer>
+</div>
+</div>
+<script>
+    firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-           document.getElementById("user_name").innerText = user.email;
+            document.getElementById("user_name").innerText = user.email;
         } else {
-          // // User is signed out.
-        console.log("not logged in");
-         document.location.href = "login.html";
+            // // User is signed out.
+            console.log("not logged in");
+            document.location.href = "login.html";
         }
-      });
+    });
 
 
-    </script>
-    <script>
+</script>
+<script>
 
 
-      getCards();
-      function getCards(){
+    getCards();
+
+    function getCards() {
 
 
         var url = "https://snippt.onrender.com/content";
         var req = new Request(url);
-        const newsList =  fetch(req)
-                .then(function(response) {
+        const newsList = fetch(req)
+            .then(function (response) {
 
-                  let data = response.json();
-                  return data;
-                })
+                let data = response.json();
+                return data;
+            })
 
 
         listNews(newsList);
 
-      }
-      function listNews(data){
+    }
+
+    function listNews(data) {
 
         data.then(function (result) {
-          console.log(result);
-          var news = result;
-          var newsList = document.getElementById('cards_l');
-          news.forEach(function (item) {
-            var newsItem = document.createElement('div');
-            // newsItem.style.display = 'flex';
-            newsItem.style.margin = '10px';
+            console.log(result);
+            var news = result;
+            var newsList = document.getElementById('cards_l');
+            news.forEach(function (item) {
+                var newsItem = document.createElement('div');
+                // newsItem.style.display = 'flex';
+                newsItem.style.margin = '10px';
 
-            newsItem.innerHTML = `<div class="card" style="width: 300px">
+                newsItem.innerHTML = `<div class="card" style="width: 300px">
     <div class="card-body" style="padding-top: 0px;">
         <h4 class="card-title">${item.title}</h4>
         <h6 class="text-muted card-subtitle mb-2"></h6>
         <p class="card-text">${item.discription.trim(10)}</p><a class="card-link" href="${item.url}">Open Snippet</a><a style="color: black"  target="_parent" class="card-link" >${item.type}<a/>
     </div>
 </div>`;
-            newsList.appendChild(newsItem);
-          })
-          })
+                newsList.appendChild(newsItem);
+            })
+        })
 
-      }
+    }
 
-    </script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/DashBoard-light-boostrap-chartist.min.js"></script>
-    <script src="assets/js/DashBoard-light-boostrap-bootstrap-notify.js"></script>
-    <script src="assets/js/DashBoard-light-boostrap-bootstrap-select.js"></script>
-    <script src="assets/js/DashBoard-light-boostrap-light-bootstrap-dashboard.js"></script>
-    <script src="assets/js/DashBoard-light-boostrap-demo.js"></script>
-  </body>
+</script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/DashBoard-light-boostrap-chartist.min.js"></script>
+<script src="assets/js/DashBoard-light-boostrap-bootstrap-notify.js"></script>
+<script src="assets/js/DashBoard-light-boostrap-bootstrap-select.js"></script>
+<script src="assets/js/DashBoard-light-boostrap-light-bootstrap-dashboard.js"></script>
+<script src="assets/js/DashBoard-light-boostrap-demo.js"></script>
+</body>
 </html>
