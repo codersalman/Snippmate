@@ -82,6 +82,9 @@ Collaboration Features: Enable collaboration on code snippets and projects withi
 Snippmate is more than just a Chrome Extension; it's a solution that empowers developers to streamline their workflow and access essential resources effortlessly. We look forward to continuing its development and making it an indispensable tool for developers worldwide.
 
 ## Branches
+
 main -> Extension -> https://github.com/codersalman/Snippmate
+
 master -> Backend -> https://github.com/codersalman/Snippmate/tree/master
+
 frontend -> frontend -> https://github.com/codersalman/Snippmate/tree/frontend
