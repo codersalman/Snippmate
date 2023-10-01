@@ -165,17 +165,27 @@
         listNews(newsList);
 
       }
-
       function listNews(data){
 
         data.then(function (result) {
           console.log(result);
           var news = result;
           var newsList = document.getElementById('cards_l');
-          var newsItem = document.createElement('div');
-          newsItem.innerHTML = '<div class="card h-100"><a href="/news/'+item._id+'"><img class="card-img-top" src="'+item.coverImage+'" alt="Card image cap"></a><div class="card-body"><h5 class="card-title"><a href="/news/'+item._id+'">'+item.title+'</a></h5></div><div class="card-footer"><small class="text-muted">'+ new Date(item.timestamp) +'</small></div></div>';
-          newsList.appendChild(newsItem);
-        })
+          news.forEach(function (item) {
+            var newsItem = document.createElement('div');
+            // newsItem.style.display = 'flex';
+            newsItem.style.margin = '10px';
+
+            newsItem.innerHTML = `<div class="card" style="width: 300px">
+    <div class="card-body" style="padding-top: 0px;">
+        <h4 class="card-title">${item.title}</h4>
+        <h6 class="text-muted card-subtitle mb-2"></h6>
+        <p class="card-text">${item.discription.trim(10)}</p><a class="card-link" href="${item.url}">Open Snippet</a><a style="color: black" class="card-link" >${item.type}<a/>
+    </div>
+</div>`;
+            newsList.appendChild(newsItem);
+          })
+          })
 
       }
 
