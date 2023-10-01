@@ -6,7 +6,8 @@ const user=require('../modals/user')
 
 
  //Save an code Snippets
-router.post("/",async (req,res)=>{
+
+router.post("/", async (req,res)=>{
         const {title,discription,type,username}=req.body;
         console.log(req.body);
         try {
@@ -19,7 +20,7 @@ router.post("/",async (req,res)=>{
         } catch (error) {
            responce.internalError(res);
         }
-    
+
     });
     router.get('/',async (req,res)=>{
         try {
@@ -69,5 +70,5 @@ router.delete("/:id",async (req,res)=>{
 })
 
 
-    
+
 module.exports=router;
