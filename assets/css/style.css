@@ -1,0 +1,48 @@
+.logo {
+    width: 140px;
+}
+
+li {
+    list-style-type: none;
+    padding: 5px;
+}
+
+.fieldbox {
+    margin-top: 20px;
+}
+
+.fields {
+    display: flex;
+    color: #8b8b8b;
+    padding-bottom: 10px;
+}
+
+#snippets {
+    color: #414142;
+}
+
+
+
+.nav-link.active,.nav-pills .nav-link.active {
+    border-radius: 21.387px;
+    color: #414142;
+    border: 0.713px solid var(--scattr-border-color, #D1D5DA);
+    background: var(--scattr-grey-background, #EDEDED);
+}
+
+.nav-link {
+    display: flex;
+    color:black ;
+    padding: 6.416px 7.129px 6.416px 9.268px;
+    justify-content: center;
+    align-items: center;
+    gap: 4.277px;}
+
+.inside{
+    width: fit-content;
+}
+
+.card{
+    width: 50%;
+}
+

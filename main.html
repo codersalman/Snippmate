@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>opin</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="assets/css/DashBoard-light-boostrap-animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/css/DashBoard-light-boostrap-demo.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/css/DashBoard-light-boostrap-pe-icon-7-stroke.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/css/DashBoard-light-boostrap-light-bootstrap-dashboard.css"
+    />
+    <link rel="stylesheet" href="./assets/css/DashBoard-light-boostrap.css" />
+    <link rel="stylesheet" href="./assets/css/Navbar-Right-Links-icons.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  </head>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBb9Y2HcWgE9wxwxZzwWlDmgsTmwH7C0zw",
+      authDomain: "snippmate.firebaseapp.com",
+      projectId: "snippmate",
+      storageBucket: "snippmate.appspot.com",
+      messagingSenderId: "353273401632",
+      appId: "1:353273401632:web:88cc4520318645f46bc745"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="assets/js/auth.js"></script>
+
+  <body>
+    <div class="wrapper" style="background: #ffffff">
+      <div
+        class="sidebar"
+        data-color="purple"
+        data-image=""
+        style="border-right: 1px solid rgba(105, 105, 105, 0.24)"
+      >
+        <div></div>
+        <nav class="navbar navbar-expand-md bg-body py-3">
+          <div class="container">
+            <img src="./assets/logo.svg" alt="" class="logo" />
+
+          </div>
+        </nav>
+        <ul style="color: rgb(14, 12, 12)" class="fieldbox">
+          <div class="fields">
+            <img src="./assets/img/snippets.svg" alt="" />
+           <b> <li id="snippets">Snippets</li></b>
+          </div>
+          <div class="fields">
+            <img src="./assets/img/assets.svg" alt="" />
+            <li>Assets</li>
+          </div>
+        </ul>
+      </div>
+      <div class="main-panel">
+        <nav
+          class="navbar navbar-expand-md navbar-light"
+          style="border-bottom: 1px solid rgba(105, 105, 105, 0.24)"
+        >
+          <div class="container-fluid">
+            <div></div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link">Hello 👋 <span id="user_name"></span></a></li>
+                <li class="nav-item"><a class="nav-link" onclick="signOut()">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="content">
+          <div class="container-fluid">
+            <div>
+              <div>
+                <ul class="nav nav-pills" role="tablist">
+                  <li class="nav-item" role="presentation" id="code-snippet">
+                    <a
+                      class="nav-link active"
+                      role="tab"
+                      data-bs-toggle="pill"
+                      href="#tab-1"
+                      >Code Snippet</a
+                    >
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a
+                      class="nav-link"
+                      role="tab"
+                      data-bs-toggle="pill"
+                      href="#tab-2"
+                      >APIs</a
+                    >
+                  </li>
+                </ul>
+                <div class="tab-content" style="margin: 24px">
+                  <div class="tab-pane active" role="tabpanel" id="tab-1">
+                    <div class="align-items-xxl-center">
+                      <div
+                        class="col d-xxl-flex justify-content-xxl-end"
+                        style="margin: 10px"
+                      >
+                        <div class="card">
+                          <div class="card-body" style="padding-top: 0px">
+                            <h4 class="card-title">HTML Login Form</h4>
+                            <p class="card-text">
+                              This is an HTML page wich includes 3 button in it
+                              login, signup and sign out
+                            </p>
+                            <!-- <a class="card-link" href="#">Link</a
+                            ><a class="card-link" href="#">Link</a> -->
+                            <a
+                              class="nav-link active inside"
+                              role="tab"
+                              data-bs-toggle="pill"
+                              href="#tab-1"
+                              >Code Snippet</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col" style="margin: 10px">
+                        <div class="card">
+                            <div class="card-body" style="padding-top: 0px">
+                              <h4 class="card-title">HTML Login Form</h4>
+                              <p class="card-text">
+                                This is an HTML page wich includes 3 button in it
+                                login, signup and sign out
+                              </p>
+                              <!-- <a class="card-link" href="#">Link</a
+                              ><a class="card-link" href="#">Link</a> -->
+                              <a
+                                class="nav-link active inside"
+                                role="tab"
+                                data-bs-toggle="pill"
+                                href="#tab-1"
+                                >Code Snippet</a
+                              >
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col" style="margin: 10px">
+                        <div class="card">
+                            <div class="card-body" style="padding-top: 0px">
+                              <h4 class="card-title">HTML Login Form</h4>
+                              <p class="card-text">
+                                This is an HTML page wich includes 3 button in it
+                                login, signup and sign out
+                              </p>
+                              <!-- <a class="card-link" href="#">Link</a
+                              ><a class="card-link" href="#">Link</a> -->
+                              <a
+                                class="nav-link active inside"
+                                role="tab"
+                                data-bs-toggle="pill"
+                                href="#tab-1"
+                                >Code Snippet</a
+                              >
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col" style="margin: 10px">
+                        <div class="card">
+                            <div class="card-body" style="padding-top: 0px">
+                              <h4 class="card-title">HTML Login Form</h4>
+                              <p class="card-text">
+                                This is an HTML page wich includes 3 button in it
+                                login, signup and sign out
+                              </p>
+                              <!-- <a class="card-link" href="#">Link</a
+                              ><a class="card-link" href="#">Link</a> -->
+                              <a
+                                class="nav-link active inside"
+                                role="tab"
+                                data-bs-toggle="pill"
+                                href="#tab-1"
+                                >Code Snippet</a
+                              >
+                            </div>
+                          </div>
+                      </div>
+
+
+                    </div>
+                  </div>
+                  <div class="tab-pane" role="tabpanel" id="tab-2">
+                    <p>Coming Soon...😎</p>
+                  </div>
+                  <div class="tab-pane" role="tabpanel" id="tab-3">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer">
+          <div class="container-fluid">
+
+            <p class="copyright pull-right">
+              © Team Byte Brigade
+            </p>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script>
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+           document.getElementById("user_name").innerText = user.email;
+        } else {
+          // // User is signed out.
+        console.log("not logged in");
+         document.location.href = "login.html";
+        }
+      });
+
+
+    </script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/DashBoard-light-boostrap-chartist.min.js"></script>
+    <script src="assets/js/DashBoard-light-boostrap-bootstrap-notify.js"></script>
+    <script src="assets/js/DashBoard-light-boostrap-bootstrap-select.js"></script>
+    <script src="assets/js/DashBoard-light-boostrap-light-bootstrap-dashboard.js"></script>
+    <script src="assets/js/DashBoard-light-boostrap-demo.js"></script>
+  </body>
+</html>
