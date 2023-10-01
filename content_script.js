@@ -58,8 +58,8 @@ async function showTooltip(event) {
                     let pin = document.createElement('div');
                     pin.className = "pin";
                     pin.textContent = "📌 Pin this snippet";
-                    child.append(pin);
-                    tooltip.appendChild(child);
+                    child.appendChild(pin);
+                    tooltip.append(child);
                     pin.addEventListener("click", function () {
 
                         fetch(`https://snippt.onrender.com/content/add`, {
