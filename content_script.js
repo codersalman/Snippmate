@@ -53,6 +53,34 @@ async function showTooltip(event) {
                     event.target.setAttribute("data-inspected", "true");
                     const summary = data.data || 'No summary available.';
                     tooltip.querySelector(".tooltipheader").textContent = summary;
+                    let child = document.createElement('div');
+                    child.style.display ="flex";
+                    let pin = document.createElement('div');
+                    pin.className = "pin";
+                    pin.textContent = "📌 Pin this snippet";
+                    child.append(pin);
+                    tooltip.appendChild(child);
+                    pin.addEventListener("click", function () {
+
+                        fetch(`https://snippt.onrender.com/content/add`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                code: codeSnippet,
+                                title: document.title,
+                                discription: summary,
+                                url: window.location.href,
+                                type: "codeSnippet"
+
+                            })
+                        })
+                            .then((response) => response.json())
+                            .then((data) => {
+                                pin.textContent = "📌 Pinned Snippet";
+                            })
+                    })
 
                 })
                 .catch((error) => {
