@@ -81,3 +81,4 @@ Collaboration Features: Enable collaboration on code snippets and projects withi
 
 Snippmate is more than just a Chrome Extension; it's a solution that empowers developers to streamline their workflow and access essential resources effortlessly. We look forward to continuing its development and making it an indispensable tool for developers worldwide.
 
+#### Postman Public Workspace Link : https://www.postman.com/faizk7499/workspace/my-workspace
