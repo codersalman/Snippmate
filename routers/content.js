@@ -21,6 +21,15 @@ router.post("/",async (req,res)=>{
         }
     
     });
+    router.get('/',async (req,res)=>{
+        try {
+            let usercontent=await content.find();
+            responce.sendResponse(res,200,usercontent);
+
+        } catch (error) {
+            responce.internalError(res);
+        }
+    })
 
     //get specific type of Snippets
 

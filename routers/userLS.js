@@ -32,7 +32,7 @@ router.post("/login/:username",async (req,res)=>{
 router.post("/signup",async (req,res)=>{
     //authentication  
     
-        const {email,username,password,confirmPassword}=req.body;
+        const {email,username,password}=req.body;
         console.log(req.body)
         try {
             let userdetails=await user.findOne({email:email});
@@ -45,7 +45,7 @@ router.post("/signup",async (req,res)=>{
                 email,username,password
             })
           
-            responce.sendResponse(res,200,data);
+            responce.sendResponse(res,200,newuser);
         } catch (error) {
            responce.internalError(res);
         }
