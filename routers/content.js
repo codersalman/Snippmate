@@ -10,11 +10,9 @@ const user=require('../modals/user')
 router.post("/add", async (req,res)=>{
         const {title,discription,type,code,url}=req.body;
         console.log(req.body);
-        try {
-            let userdetail=await user.findOne({username:username});
-            let userid=userdetail._id;
+        try { 
             await content.create({
-                title,discription,type,userid
+                title,discription,type,code,url
             })
         responce.sendResponse(res,200,"Saved");
         } catch (error) {
