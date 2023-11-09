@@ -1,8 +1,8 @@
 ## Inspiration
-The inspiration behind Snippmate came from the need to streamline the development process by providing a unified dashboard for all the essential assets and resources that developers frequently use. In our daily work, we often find ourselves searching for code snippets, APIs, and other reference materials across various tabs and websites. Snippmate aims to simplify this process by bringing all these resources together in one place.
+The inspiration behind Snippmate came from the need to streamline the development process by providing a unified dashboard for all the essential assets and resources that developers frequently use and summarize code sinppets just by hovering through it. In our daily work, we often find ourselves searching for code snippets, APIs, and other reference materials across various tabs and websites. Snippmate aims to simplify this process by bringing all these resources together in one place.
 
 ## What it does
-Snippmate is a Chrome Extension that offers a centralized dashboard where developers can access and manage their frequently used assets. Here's what it does:
+Snippmate is a Chrome Extension that summarizes any code snippet by hovering over it and pin the same in you personal centralized dashboard where developers can access and manage their frequently used assets. Here's what it does:
 
 Unified Dashboard: Snippmate provides a user-friendly dashboard that consolidates code snippets, APIs, and other reference materials.
 
